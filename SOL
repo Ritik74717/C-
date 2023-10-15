@@ -1,0 +1,197 @@
+
+
+Progrm One--
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DelegtesExmple
+{
+    internal class Bankccount
+    {
+        public static void Main(string[] args)
+        {
+            Bank b = new Bank("Ritik", 23344, 2000);
+            b.showProfile();
+            b.withdraw(500);
+            b.showProfile();
+            b.withdraw(2000);
+            Console.ReadLine();
+        }
+    }
+
+    public class Bank
+    {
+        private string name;
+        private int accountNumber;
+        private double bal;
+
+        public Bank(string name, int accountNumber, double bal)
+        {
+            this.name = name;
+            this.accountNumber = accountNumber;
+            this.bal = bal;
+        }
+
+        public void showBalnce()
+        {
+            Console.WriteLine("Balance is :" + bal);
+        }
+
+        public void withdraw(int amt)
+        {
+            if(amt >bal) {
+                throw new Exception("Amount is greter than Account balnce");
+
+            }
+            else
+            {
+                bal = bal - amt;
+                Console.WriteLine("Withdrwl Successfull");
+            }
+        }
+
+        public void showProfile()
+        {
+            Console.WriteLine("Name : - " + name);
+            Console.WriteLine("Account Number : - " + accountNumber);
+            showBalnce();
+        }
+    }
+}
+
+
+Progrm 1-
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DelegtesExmple
+{
+    public delegate void opertion(int n, int n2);
+
+   
+   /* internal class Program
+    {
+
+        public static void sum(int x, int y)
+        {
+            Console.WriteLine("Sum is "+(x+y));
+
+        }
+
+        public static void sub(int x, int y)
+        {
+            Console.WriteLine("Difference is " + (x - y));
+
+        }
+
+        public static void product(int x, int y)
+        {
+            Console.WriteLine("Product is " + (x * y));
+
+        }
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("Enter your choice");
+            Console.WriteLine("1- Addition");
+            Console.WriteLine("2- Subtrction");
+            Console.WriteLine("3- Product");
+
+            int choice = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Two Numbers");
+            int a = Convert.ToInt32(Console.ReadLine());
+            int b = Convert.ToInt32(Console.ReadLine());
+            opertion obj;
+            
+
+            switch (choice)
+            {
+                case 1: obj = sum;
+                        obj(a, b);
+                        break;
+                case 2:
+                    obj = sub;
+                    obj(a, b);
+                    break;
+
+                case 3:
+                    obj = product;
+                    obj(a, b);
+                    break;
+            }
+            Console.ReadLine();
+        }
+    }*/
+}
+
+Progrm 2--
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DelegtesExmple
+{
+    internal class Bankccount
+    {
+        public static void Main(string[] args)
+        {
+            Bank b = new Bank("Ritik", 23344, 2000);
+            b.showProfile();
+            b.withdraw(500);
+            b.showProfile();
+            b.withdraw(2000);
+            Console.ReadLine();
+        }
+    }
+
+    public class Bank
+    {
+        private string name;
+        private int accountNumber;
+        private double bal;
+
+        public Bank(string name, int accountNumber, double bal)
+        {
+            this.name = name;
+            this.accountNumber = accountNumber;
+            this.bal = bal;
+        }
+
+        public void showBalnce()
+        {
+            Console.WriteLine("Balance is :" + bal);
+        }
+
+        public void withdraw(int amt)
+        {
+            if(amt >bal) {
+                throw new Exception("Amount is greter than Account balnce");
+
+            }
+            else
+            {
+                bal = bal - amt;
+                Console.WriteLine("Withdrwl Successfull");
+            }
+        }
+
+        public void showProfile()
+        {
+            Console.WriteLine("Name : - " + name);
+            Console.WriteLine("Account Number : - " + accountNumber);
+            showBalnce();
+        }
+    }
+}
+
